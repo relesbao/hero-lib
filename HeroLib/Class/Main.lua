@@ -107,7 +107,7 @@ end
 do
   local Spell = Class()
   HL.Spell = Spell
-  function Spell:New(SpellID, SpellType)
+  function Spell:New(SpellID, SpellType, Key)
     if type(SpellID) ~= "number" then error("Invalid SpellID.") end
     if SpellType and type(SpellType) ~= "string" then error("Invalid Spell Type.") end
 
@@ -125,6 +125,7 @@ do
     self.LastHitTime = 0
     self.LastAppliedOnPlayerTime = 0
     self.LastRemovedFromPlayerTime = 0
+    self.Key = Key
   end
 end
 
